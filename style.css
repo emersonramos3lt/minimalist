@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+body {
+    margin: 0;
+    background-color: #111;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 0px;
+}
+
+header h1 a {
+    transition: all .2s;
+    color: #fff;
+}
+
+header h1 a:hover {
+    transition: all .2s;
+    color: #777;
+}
+
+nav ul li {
+    display: inline-flex;
+    list-style-type: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+    font-family: "Roboto Slab", serif;
+    transition: all .2s;
+}
+
+nav a:hover {
+    transition: all .2s;
+    color: #777;
+}
+
+.welcome {
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+.welcome h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 5rem;
+    color: #fff;
+}
+
+.right {
+    animation: right 1s 1 ease-in-out;
+}
+
+.left {
+    animation: left 1s 1 ease-in-out;
+}
+
+.welcome p {
+    font-family: "Dancing Script", cursive;
+    font-size: 2rem;
+    color: #fff;
+    animation: bouncy 2s 5 ease-in-out;
+}
+
+.work {
+    max-width: 700px;
+    margin: auto;
+    color: #fff;
+    font-family: "Roboto Slab", serif;
+}
+
+.work h1 {
+    text-align: center;
+}
+
+p {
+    visibility: hidden;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border: 2px solid #000;
+    border-radius: 15px;
+
+    animation: reveal 5ms ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 50%;
+}
+
+.grid-img {
+    margin-bottom: 3rem;
+    padding-top: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.magneto {
+    font-family: "Roboto Slab", serif;
+    font-size: 1.7rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+}
+
+.magneto:hover {
+    transition: all .4s;
+    background-color: #222;
+    color: #fff;
+}
+
+.magneto:active {
+    transition: all .1s;
+    background-color: #194221;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: #000;
+    padding: 20px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.7rem;
+    margin-right: 2rem;
+    transition: all .2s;
+}
+
+footer a:hover {
+    transition: all .2s;
+    color: #777;
+    font-size: 1.8rem;
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        clip-path: inset(45% 20% 45% 20%);
+    }
+
+    to {
+        opacity: 1;
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+
+@keyframes right {
+   from {transform: translateX(100%);}
+   to {transform: translateX(0%);}
+}
+
+@keyframes left {
+    from {transform: translateX(-100%);}
+    to {transform: translateX(0%);}
+}
+
+@keyframes bouncy {
+    0% {transform: translateY(0%);}
+    50% {transform: translateY(50%);}
+    100% {transform: translateY(0%);}
+}
+
+@media(max-width: 550px) {
+    .welcome h1 {
+        font-size: 4rem;
+    }
+
+    .work {
+        max-width: 400px;
+    }
+}
